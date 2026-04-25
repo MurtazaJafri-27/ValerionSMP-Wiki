@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-position: center;
     overflow-y: hidden;
+    background-attachment: fixed
 }
 
 /* BACKGROUND GLASS */
@@ -20,10 +21,11 @@ main {
     height: 80vh;
 
     background-color: rgb(6, 0, 20);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
 
     transition: transform 0.25s ease-in-out;
 }
@@ -37,7 +39,6 @@ main:hover {
 .smpLogo {
     width: 1014px;
     width: 365px;
-    transform: scale(0.75);
     z-index: 1;
     position: relative;
 
@@ -45,15 +46,17 @@ main:hover {
 }
 
 .smpLogo:hover {
-    transform: scale(0.8);
+    transform: scale(1.025);
+    cursor: pointer;
 }
 
 /* LOGO BAR */
 .logoBar {
-    margin: 2%;
+    margin: 5%;
     width: 45%;
     height: 20%;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -90,3 +93,16 @@ main:hover {
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Main Description */
+
+.mainDesc {
+    width: 60%;
+    min-height: 600px;
+
+    flex-shrink: 0; /* ADD THIS too */
+    background-color: blue;
+    border-radius: 50px 50px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
