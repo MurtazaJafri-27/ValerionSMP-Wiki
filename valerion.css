@@ -10,19 +10,83 @@ body {
     overflow-y: hidden;
 }
 
+/* BACKGROUND GLASS */
+
 main {
     margin: 5%;
+    padding: 0;
     border-radius: 50px 50px;
     width: 70vw;
     height: 80vh;
-    background-color: rgb(6, 0, 20);
-    opacity: 75%;
 
-    transition: transform 0.35s ease-in-out;
+    background-color: rgb(6, 0, 20);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.25s ease-in-out;
 }
 
 main:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+    transform: scale(1.025);
 }
 
+/* SMP LOGO */
+
+.smpLogo {
+    width: 1014px;
+    width: 365px;
+    transform: scale(0.75);
+    z-index: 1;
+    position: relative;
+
+    transition: transform 0.25s ease-in-out;
+}
+
+.smpLogo:hover {
+    transform: scale(0.8);
+}
+
+/* LOGO BAR */
+.logoBar {
+    margin: 2%;
+    width: 45%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    background-image: url('Void_barrens.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* important */
+}
+
+.logoBar::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    inset: 5px;
+    background: conic-gradient(transparent, transparent, transparent, #dd6fff);
+    animation: rotate 2s linear infinite;
+}
+
+.logoBar::after {
+    content: '';
+    position: absolute;
+    inset: 5px; /* controls border thickness */
+    border-radius: 47px;
+    background-image: url('Void_barrens.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes rotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
