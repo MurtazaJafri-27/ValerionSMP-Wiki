@@ -30,9 +30,6 @@ main {
     transition: transform 0.25s ease-in-out;
 }
 
-main:hover {
-    transform: scale(1.025);
-}
 
 /* SMP LOGO */
 
@@ -42,11 +39,13 @@ main:hover {
     z-index: 1;
     position: relative;
 
+    transform: scale(0.85);
     transition: transform 0.25s ease-in-out;
 }
 
 .smpLogo:hover {
-    transform: scale(1.025);
+    transform: scale(0.9);
+    content: url('glowLogo.png');
     cursor: pointer;
 }
 
@@ -101,8 +100,35 @@ main:hover {
     min-height: 600px;
 
     flex-shrink: 0; /* ADD THIS too */
-    background-color: blue;
+    background-color: rgb(0, 0, 255);
     border-radius: 50px 50px;
     background: rgba(0, 0, 0, 0.4);
+    margin-bottom: 5%;
+    margin-top: 0;
 }
 
+.neonBorder {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.neonBorder::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background: conic-gradient(transparent, transparent, transparent, #dd6fff);
+    animation: rotate 2s linear infinite;
+}
+
+.neonBorder::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 47px;
+    background-color: rgb(0, 0, 255);
+    background: rgb(6, 0, 20); /* fully opaque, no transparency */
+}
